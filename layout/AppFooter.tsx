@@ -1,16 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 
-import React, { useContext } from 'react';
-import { LayoutContext } from './context/layoutcontext';
+import React from 'react';
 
 const AppFooter = () => {
-    const { layoutConfig } = useContext(LayoutContext);
 
     return (
         <div className="layout-footer">
-            <img src={`/layout/images/logo-${layoutConfig.colorScheme === 'light' ? 'dark' : 'white'}.svg`} alt="Logo" height="20" className="mr-2" />
-            by
-            <span className="font-medium ml-2">PrimeReact</span>
+            <div className="flex items-center">
+                © {new Date().getFullYear()}
+                - Developed by
+                <a href="https://linkontech.com.br" target="_blank" rel="noopener noreferrer"
+                   className="flex items-center hover:underline text-primary">
+                    <img className="ml-1 mr-1" src="/lampada-transparente.png" height="20" />
+                    LinkOnTech
+                </a>
+            </div>
         </div>
     );
 };
